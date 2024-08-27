@@ -18,7 +18,6 @@ class Checkup extends Model
         'berat_badan',
         'tekanan_darah_sistol',
         'tekanan_darah_diastol',
-        'tinggi_fundus_uteri',
         'catatan',
     ];
 

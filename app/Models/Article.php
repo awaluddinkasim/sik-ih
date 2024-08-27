@@ -11,6 +11,12 @@ class Article extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'gambar',
+        'judul',
+        'konten',
+    ];
+
     public function ulid(): Attribute
     {
         return new Attribute(
