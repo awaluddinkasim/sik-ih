@@ -1,13 +1,22 @@
-@props(['id', 'label', 'title', 'hasFile' => false])
+@props(['id', 'label', 'title', 'action', 'hasFile' => false, 'smallButton' => false])
 
-<button type="button"
-    class="py-2 px-5 inline-block font-semibold tracking-wide border align-middle duration-500 text-base text-center bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md"
-    onclick="{{ $id }}.showModal()">
+
+@php
+    if ($smallButton) {
+        $class =
+            'py-[5px] px-4 inline-block font-semibold tracking-wide align-middle duration-500 text-sm text-center bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md inline';
+    } else {
+        $class =
+            'py-2 px-5 inline-block font-semibold tracking-wide border align-middle duration-500 text-base text-center bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md';
+    }
+@endphp
+
+<button type="button" class="{{ $class }}" onclick="{{ $id }}.showModal()">
     {{ $label }}
 </button>
 
 <x-component.modal id="{{ $id }}" title="{{ $title }}">
-    <form action="" method="post" autocomplete="off"
+    <form action="{{ $action }}" method="post" autocomplete="off"
         @if ($hasFile) enctype="multipart/form-data" @endif>
         @csrf
         {{ $slot }}

@@ -1,4 +1,4 @@
-@props(['label', 'name', 'required' => false, 'helperText'])
+@props(['label', 'name', 'required' => false, 'helperText', 'gambar'])
 
 @push('scripts')
     <script>
@@ -16,7 +16,7 @@
             }
 
             $('#{{ $name }}Preview').html(
-                `<img src="${URL.createObjectURL(event.target.files[0])}" class="w-fullobject-contain" style="height: 100%;" />`
+                `<img src="${URL.createObjectURL(event.target.files[0])}" class="object-contain" style="height: 100%;" />`
             );
         })
     </script>
@@ -33,6 +33,10 @@
     @endisset
     <div class="h-64 w-full border-dotted border-2 border-gray-300 rounded-lg mt-2 flex justify-center items-center bg-slate"
         id="{{ $name }}Preview">
-        <span class="text-gray-500">Pilih Gambar</span>
+        @isset($gambar)
+            <img src="{{ asset('files/article/' . $gambar) }}" class="object-contain" style="height: 100%;" />
+        @else
+            <span class="text-gray-500">Pilih Gambar</span>
+        @endisset
     </div>
 </div>

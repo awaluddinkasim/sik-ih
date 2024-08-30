@@ -11,10 +11,11 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
@@ -22,6 +23,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'ulid',
         'nama',
         'email',
         'password',
@@ -54,25 +56,26 @@ class User extends Authenticatable
         ];
     }
 
-    public function ulid(): Attribute
+    public static function boot(): void
     {
-        return new Attribute(
-            set: fn() => Str::ulid(),
-        );
+        parent::boot();
+        self::creating(function ($model) {
+            $model->ulid = Str::ulid();
+        });
     }
 
     public function kehamilan(): HasOne
     {
-        return $this->hasOne(Pregrancy::class)->where('is_active', true);
+        return $this->hasOne(Pregnancy::class, 'user_id')->where('is_active', true);
     }
 
     public function riwayatKehamilan(): HasMany
     {
-        return $this->hasMany(Pregrancy::class);
+        return $this->hasMany(Pregnancy::class, 'user_id');
     }
 
-    public function appointments(): HasMany
+    public function konsultasi(): HasMany
     {
-        return $this->hasMany(Appointment::class);
+        return $this->hasMany(Appointment::class, 'user_id');
     }
 }

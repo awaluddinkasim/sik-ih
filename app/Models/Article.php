@@ -12,15 +12,17 @@ class Article extends Model
     use HasFactory;
 
     protected $fillable = [
+        'ulid',
         'gambar',
         'judul',
         'konten',
     ];
 
-    public function ulid(): Attribute
+    public static function boot(): void
     {
-        return new Attribute(
-            set: fn() => Str::ulid(),
-        );
+        parent::boot();
+        self::creating(function ($model) {
+            $model->ulid = Str::ulid();
+        });
     }
 }

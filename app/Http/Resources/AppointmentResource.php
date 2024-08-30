@@ -14,6 +14,10 @@ class AppointmentResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'tanggal_appointment' => $this->tanggal_appointment,
+            'tujuan' => $this->tujuan,
+            'status' => $this->status
+        ];
     }
 }

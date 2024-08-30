@@ -1,4 +1,4 @@
-@props(['type' => 'button', 'color' => 'indigo', 'size' => 'default', 'full' => false])
+@props(['type' => 'button', 'color' => 'indigo', 'size' => 'default', 'full' => false, 'navigate' => null])
 
 @php
     if ($size == 'small') {
@@ -8,6 +8,7 @@
     }
 @endphp
 
-<button type="{{ $type }}" class="{{ $class }} {{ $full ? 'w-full' : '' }}">
+<button type="{{ $type }}" class="{{ $class }} {{ $full ? 'w-full' : '' }}"
+    @if ($navigate) onclick="window.location.href='{{ $navigate }}'" @endif>
     {{ $slot }}
 </button>

@@ -14,7 +14,7 @@ if (! function_exists('calculateGestationalAge')) {
     function calculateGestationalAge(Carbon $lastPeriodDate): int
     {
         $now = Carbon::now();
-        $gestationalAge = $now->diffInWeeks($lastPeriodDate);
+        $gestationalAge = $lastPeriodDate->diffInWeeks($now);
         return $gestationalAge;
     }
 }

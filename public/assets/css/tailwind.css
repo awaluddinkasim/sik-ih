@@ -879,6 +879,9 @@ video {
       -ms-flex-order: 3 !important;
           order: 3 !important;
 }
+.col-span-2{
+    grid-column: span 2 / span 2 !important;
+  }
 .col-span-12{
   grid-column: span 12 / span 12 !important;
 }
@@ -2964,7 +2967,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   --tw-text-opacity: 1;
   color: rgb(15 23 42 / var(--tw-text-opacity));
 }
-:is(.dark .page-wrapper .sidebar-wrapper .sidebar-brand > a),:is(.dark 
+:is(.dark .page-wrapper .sidebar-wrapper .sidebar-brand > a),:is(.dark
 .page-wrapper .sidebar-wrapper .sidebar-menu li a){
   color: rgb(255 255 255 / 0.5);
 }
@@ -2979,13 +2982,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   --tw-text-opacity: 1 !important;
   color: rgb(79 70 229 / var(--tw-text-opacity)) !important;
 }
-:is(.dark .page-wrapper .sidebar-wrapper .sidebar-menu li:hover > a),:is(.dark 
-.page-wrapper .sidebar-wrapper .sidebar-menu li.active > a),:is(.dark 
-.page-wrapper .sidebar-wrapper .sidebar-menu li:active > a),:is(.dark 
-.page-wrapper .sidebar-wrapper .sidebar-menu li:active > a):before,:is(.dark 
-.page-wrapper .sidebar-wrapper .sidebar-menu li:hover > a):before,:is(.dark 
-.page-wrapper .sidebar-wrapper .sidebar-menu li.active > a):before,:is(.dark 
-.page-wrapper .sidebar-wrapper .sidebar-menu .sidebar-dropdown.active > a),:is(.dark 
+:is(.dark .page-wrapper .sidebar-wrapper .sidebar-menu li:hover > a),:is(.dark
+.page-wrapper .sidebar-wrapper .sidebar-menu li.active > a),:is(.dark
+.page-wrapper .sidebar-wrapper .sidebar-menu li:active > a),:is(.dark
+.page-wrapper .sidebar-wrapper .sidebar-menu li:active > a):before,:is(.dark
+.page-wrapper .sidebar-wrapper .sidebar-menu li:hover > a):before,:is(.dark
+.page-wrapper .sidebar-wrapper .sidebar-menu li.active > a):before,:is(.dark
+.page-wrapper .sidebar-wrapper .sidebar-menu .sidebar-dropdown.active > a),:is(.dark
 .page-wrapper .sidebar-wrapper .sidebar-brand > a:hover){
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
@@ -3349,7 +3352,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   -webkit-transition-duration: 500ms;
           transition-duration: 500ms;
 }
-:is(.dark .tns-controls button[data-controls=prev]),:is(.dark 
+:is(.dark .tns-controls button[data-controls=prev]),:is(.dark
 .tns-controls button[data-controls=next]){
   --tw-bg-opacity: 1;
   background-color: rgb(15 23 42 / var(--tw-bg-opacity));
@@ -3448,8 +3451,8 @@ html[dir=rtl] .tns-visually-hidden {
   border-color: rgb(243 244 246 / var(--tw-border-opacity)) !important;
 }
 
-:is(.dark .fc-theme-standard .fc-scrollgrid),:is(.dark 
-.fc-theme-standard td),:is(.dark 
+:is(.dark .fc-theme-standard .fc-scrollgrid),:is(.dark
+.fc-theme-standard td),:is(.dark
 .fc-theme-standard th){
   --tw-border-opacity: 1 !important;
   border-color: rgb(31 41 55 / var(--tw-border-opacity)) !important;
@@ -3550,7 +3553,7 @@ html[dir=rtl] .tns-visually-hidden {
   border-color: rgb(229 231 235 / var(--tw-border-opacity)) !important;
   background-color: transparent !important;
 }
-:is(.dark .ck.ck-toolbar),:is(.dark 
+:is(.dark .ck.ck-toolbar),:is(.dark
 .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused)){
   --tw-border-opacity: 1 !important;
   border-color: rgb(31 41 55 / var(--tw-border-opacity)) !important;
@@ -3617,17 +3620,17 @@ html[dir=rtl] .tns-visually-hidden {
   stroke: #f3f4f6 !important;
 }
 
-:is(.dark .apexcharts-gridlines-horizontal),:is(.dark 
-.apexcharts-gridlines-vertical),:is(.dark 
-.apexcharts-grid),:is(.dark 
-.apexcharts-gridline),:is(.dark 
-.apexcharts-xaxis-tick),:is(.dark 
-.apexcharts-xaxis line),:is(.dark 
-.apexcharts-gridline line),:is(.dark 
-.apexcharts-radar-series line),:is(.dark 
-.apexcharts-area-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events),:is(.dark 
-.apexcharts-line-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events),:is(.dark 
-.apexcharts-radar-series path),:is(.dark 
+:is(.dark .apexcharts-gridlines-horizontal),:is(.dark
+.apexcharts-gridlines-vertical),:is(.dark
+.apexcharts-grid),:is(.dark
+.apexcharts-gridline),:is(.dark
+.apexcharts-xaxis-tick),:is(.dark
+.apexcharts-xaxis line),:is(.dark
+.apexcharts-gridline line),:is(.dark
+.apexcharts-radar-series line),:is(.dark
+.apexcharts-area-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events),:is(.dark
+.apexcharts-line-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events),:is(.dark
+.apexcharts-radar-series path),:is(.dark
 .apexcharts-radar-series polygon){
   stroke: #1f2937 !important;
 }

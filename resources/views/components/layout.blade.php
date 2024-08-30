@@ -50,7 +50,10 @@
             <div class="container-fluid relative px-3">
                 <div class="layout-specing">
                     <!-- Start Content -->
-                    <h5 class="text-lg font-semibold mb-6">{{ $title ?? 'Page' }}</h5>
+                    <div class="flex justify-between items-center mb-6">
+                        <h5 class="text-lg font-semibold mb-0">{{ $title ?? 'Page' }}</h5>
+                        {{ $actions ?? '' }}
+                    </div>
 
 
                     {{ $slot }}

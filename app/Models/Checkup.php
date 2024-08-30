@@ -13,6 +13,7 @@ class Checkup extends Model
     use HasFactory;
 
     protected $fillable = [
+        'ulid',
         'pregnancy_id',
         'tanggal_pemeriksaan',
         'berat_badan',
@@ -21,15 +22,16 @@ class Checkup extends Model
         'catatan',
     ];
 
-    public function ulid(): Attribute
+    public static function boot(): void
     {
-        return new Attribute(
-            set: fn() => Str::ulid(),
-        );
+        parent::boot();
+        self::creating(function ($model) {
+            $model->ulid = Str::ulid();
+        });
     }
 
-    public function pregnancy(): BelongsTo
+    public function kehamilan(): BelongsTo
     {
-        return $this->belongsTo(Pregrancy::class);
+        return $this->belongsTo(Pregnancy::class, 'pregnancy_id');
     }
 }

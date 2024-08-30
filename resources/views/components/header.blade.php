@@ -5,12 +5,6 @@
             <!-- Logo -->
             <a href="/" class="xl:hidden block me-2">
                 <img src="{{ asset('assets/images/logo-icon-32.png') }}" class="md:hidden block" alt="">
-                <span class="md:block hidden">
-                    <img src="{{ asset('assets/images/logo-dark.png') }}" class="inline-block dark:hidden"
-                        alt="">
-                    <img src="{{ asset('assets/images/logo-light.png') }}" class="hidden dark:inline-block"
-                        alt="">
-                </span>
             </a>
             <!-- Logo -->
 

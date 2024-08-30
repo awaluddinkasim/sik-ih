@@ -23,7 +23,7 @@ return new class extends Migration
             $table->date('tgl_lahir');
             $table->text('alamat');
             $table->string('no_hp');
-            $table->text('riwayat_kesehatan');
+            $table->text('riwayat_kesehatan')->nullable();
             $table->string('device_token')->nullable();
             $table->timestamps();
         });

@@ -20,7 +20,7 @@
 <div class="mb-3">
     <label class="form-label font-semibold">{{ $label }}</label>
 
-    <input type="hidden" name="{{ $name }}" required>
+    <input type="hidden" name="{{ $name }}" value="{{ $slot }}" required>
 
     <div id="editor" style="height: 400px" class="mb-3">
         {{ $slot }}

@@ -13,17 +13,19 @@ class Appointment extends Model
     use HasFactory;
 
     protected $fillable = [
+        'ulid',
         'user_id',
-        'waktu_appointment',
+        'tanggal_appointment',
         'tujuan',
         'status',
     ];
 
-    public function ulid(): Attribute
+    public static function boot(): void
     {
-        return new Attribute(
-            set: fn() => Str::ulid(),
-        );
+        parent::boot();
+        self::creating(function ($model) {
+            $model->ulid = Str::ulid();
+        });
     }
 
     public function user(): BelongsTo

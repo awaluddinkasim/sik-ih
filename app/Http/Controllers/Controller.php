@@ -30,7 +30,7 @@ abstract class Controller
         ], 200);
     }
 
-    public function jsonError($data, $message = 'Gagal', $code = 500): JsonResponse
+    public function jsonError($message = 'Gagal', $code = 500, $data = []): JsonResponse
     {
         return response()->json([
             'status' => 'error',

@@ -16,9 +16,9 @@ return new class extends Migration
             $table->id();
             $table->ulid('ulid')->unique();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->dateTime('waktu_appointment');
-            $table->string('tujuan');
-            $table->enum('status', ['pending', 'confirmed', 'cancelled'])->default('pending');
+            $table->date('tanggal_appointment');
+            $table->string('keluhan');
+            $table->enum('status', ['pending', 'dikonfirmasi', 'cancelled'])->default('pending');
             $table->timestamps();
         });
     }

@@ -1,4 +1,24 @@
-@props(['label', 'name', 'type' => 'text', 'value' => '', 'placeholder', 'required' => false, 'helperText'])
+@props([
+    'label',
+    'name',
+    'type' => 'text',
+    'value' => '',
+    'placeholder',
+    'required' => false,
+    'helperText',
+    'numeric' => false,
+])
+
+@if ($numeric)
+    @push('scripts')
+        <script src="{{ asset('assets/libs/autonumeric/autoNumeric.min.js') }}"></script>
+        <script>
+            new AutoNumeric('#{{ $name }}Input', {
+                modifyValueOnWheel: false
+            });
+        </script>
+    @endpush
+@endif
 
 <div class="mb-3">
     <label class="form-label font-semibold" for="{{ $name }}Input">{{ $label }}</label>

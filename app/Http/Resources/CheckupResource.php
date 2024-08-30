@@ -14,6 +14,12 @@ class CheckupResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'tanggal_pemeriksaan' => $this->tanggal_pemeriksaan,
+            'berat_badan' => $this->berat_badan,
+            'tekanan_darah_sistol' => $this->tekanan_darah_sistol,
+            'tekanan_darah_diastol' => $this->tekanan_darah_diastol,
+            'catatan' => $this->catatan
+        ];
     }
 }

@@ -42,10 +42,4 @@ return [
         'route' => 'checkup.index',
         'icon' => 'clipboard',
     ],
-    [
-        'active-segment' => 'about',
-        'label' => 'Tentang',
-        'route' => 'about',
-        'icon' => 'info-circle',
-    ],
 ];
