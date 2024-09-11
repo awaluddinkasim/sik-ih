@@ -11,8 +11,8 @@
             theme: 'snow'
         });
 
-        $('#editor').on('keyup onchange', function() {
-            $("input[name='{{ $name }}']").val(quill.root.innerHTML);
+        quill.on('text-change', function() {
+            $("input[name='{{ $name }}']").val(quill.getContents());
         })
     </script>
 @endpush

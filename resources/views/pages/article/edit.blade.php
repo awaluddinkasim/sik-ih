@@ -1,7 +1,17 @@
+@push('scripts')
+    <script>
+        $('#formArticle').on('submit', function(e) {
+            let konten = ($('#editor').children("div").html());
+
+            $("input[name='konten']").val(konten);
+        })
+    </script>
+@endpush
+
 <x-layout title="Edit Artikel">
     <x-component.card>
         <form action="{{ route('article.update', $article->ulid) }}" method="post" autocomplete="off"
-            enctype="multipart/form-data">
+            enctype="multipart/form-data" id="formArticle">
             @method('PUT')
             @csrf
             <x-form.image label="Ganti Gambar" name="gambar" gambar="{{ $article->gambar }}" />

@@ -7,12 +7,12 @@ use Illuminate\Http\RedirectResponse;
 
 abstract class Controller
 {
-    public function redirect($to, $status, $message): RedirectResponse
+    protected function redirect($to, $status, $message): RedirectResponse
     {
         return redirect($to)->with($status, $message);
     }
 
-    public function redirectBack($status, $message, $withInput = false): RedirectResponse
+    protected function redirectBack($status, $message, $withInput = false): RedirectResponse
     {
         if ($withInput) {
             return redirect()->back()->with($status, $message)->withInput();
@@ -21,7 +21,7 @@ abstract class Controller
         return back()->with($status, $message);
     }
 
-    public function jsonSuccess($data): JsonResponse
+    protected function jsonSuccess($data): JsonResponse
     {
         return response()->json([
             'status' => 'success',
@@ -30,7 +30,7 @@ abstract class Controller
         ], 200);
     }
 
-    public function jsonError($message = 'Gagal', $code = 500, $data = []): JsonResponse
+    protected function jsonError($message = 'Gagal', $code = 500, $data = []): JsonResponse
     {
         return response()->json([
             'status' => 'error',

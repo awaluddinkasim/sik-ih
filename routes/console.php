@@ -21,5 +21,9 @@ Schedule::call(function () {
         $pregnancy = $pregnancy->update([
             'usia_kehamilan' => $usiaKehamilan,
         ]);
+
+        if (Carbon::parse($pregnancy->perkiraan_tanggal_persalinan) < Carbon::now()) {
+            $pregnancy->update(['is_active' => false]);
+        }
     }
 })->daily();
