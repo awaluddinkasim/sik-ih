@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\CheckupController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PregnancyController;
+use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -46,6 +47,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/checkup', [CheckupController::class, 'index'])->name('checkup.index');
     Route::post('/checkup', [CheckupController::class, 'store'])->name('checkup.store');
     Route::get('/checkup/{pregnancy:ulid}', [CheckupController::class, 'detail'])->name('checkup.detail');
+
+    Route::get('/report', [ReportController::class, 'index'])->name('laporan.index');
+    Route::get('/report/export', [ReportController::class, 'export'])->name('laporan.export');
 
     Route::get('/profile', [AccountController::class, 'index'])->name('profile');
     Route::put('/profile', [AccountController::class, 'update'])->name('profile.update');

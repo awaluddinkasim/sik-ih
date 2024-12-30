@@ -45,7 +45,7 @@ return [
     [
         'active-segment' => 'report',
         'label' => 'Laporan',
-        // 'route' => 'appointment.index',
+        'route' => 'laporan.index',
         'icon' => 'file-alt',
     ],
 ];
