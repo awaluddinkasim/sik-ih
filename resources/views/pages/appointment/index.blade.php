@@ -24,7 +24,7 @@
                         <td>{{ $appointment->tujuan }}</td>
                         <td>{{ Str::ucfirst($appointment->status) }}</td>
                         <td class="text-center">
-                            @if ($appointment->status == 'pending' || $appointment->status == 'confirmed')
+                            @if ($appointment->status == 'pending' || $appointment->status == 'approved')
                                 @if ($appointment->status == 'pending')
                                     <x-form.modal id="confirmation{{ $appointment->id }}" label="Konfirmasi"
                                         :smallButton="true" title="Konfirmasi Konsultasi"

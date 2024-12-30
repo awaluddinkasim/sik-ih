@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->date('tanggal_appointment');
             $table->string('tujuan');
-            $table->enum('status', ['pending', 'dikonfirmasi', 'cancelled'])->default('pending');
+            $table->enum('status', ['pending', 'approved', 'cancelled'])->default('pending');
             $table->timestamps();
         });
     }

@@ -42,4 +42,10 @@ return [
         'route' => 'checkup.index',
         'icon' => 'clipboard',
     ],
+    [
+        'active-segment' => 'report',
+        'label' => 'Laporan',
+        // 'route' => 'appointment.index',
+        'icon' => 'file-alt',
+    ],
 ];

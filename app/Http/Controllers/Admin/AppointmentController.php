@@ -23,7 +23,7 @@ class AppointmentController extends Controller
         ]);
 
         $appointment->tanggal_appointment = $data['tanggal_appointment'];
-        $appointment->status = 'confirmed';
+        $appointment->status = 'approved';
 
         $appointment->update();
 

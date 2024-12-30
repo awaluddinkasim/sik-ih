@@ -8,6 +8,7 @@ use App\Http\Controllers\User\ArticleController;
 use App\Http\Controllers\User\CheckupController;
 use App\Http\Controllers\User\PregnancyController;
 use App\Http\Controllers\User\AppointmentController;
+use App\Http\Controllers\User\WeightController;
 
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AccountController::class, 'store']);
@@ -23,6 +24,10 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 
     Route::get('/pregnancy', [PregnancyController::class, 'get']);
     Route::post('/pregnancy', [PregnancyController::class, 'store']);
+
+    Route::get('/weight', [WeightController::class, 'get']);
+    Route::post('/weight', [WeightController::class, 'store']);
+    Route::delete('/weight/{weight:id}', [WeightController::class, 'delete']);
 
     Route::get('/checkup/{pregnancy:id}', [CheckupController::class, 'get']);
 
